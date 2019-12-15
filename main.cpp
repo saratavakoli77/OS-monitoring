@@ -87,7 +87,6 @@ void setCars(vector<Path> paths, vector<Car*> &cars) {
             car->carPath = paths[i];
             car->currentNode = paths[i].pathSequence[0];
             car->num = j + 1;
-            srand (time(NULL));
             car->p = rand() % 10 + 1;
             car->id = carNum;
             cars.push_back(car);
@@ -138,6 +137,7 @@ void moveInRoad(vector<Monitor*> monitors, Car* car) {
 
 int main(int argc, char* argv[])
 {
+    srand (time(NULL));
     totalEmission = 0;
     sem_init(&totalEmissionSem, 0, 1);
     vector<vector<string>> points;
